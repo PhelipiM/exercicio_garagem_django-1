@@ -22,6 +22,9 @@ class Acessorio(models.Model):
     def __str__(self):
         return self.descricao
 
+    class Meta:
+        verbose_name = 'Acessório'
+
 
 class Cor(models.Model):
     descricao = models.CharField(max_length=100)
@@ -55,3 +58,6 @@ class Veiculo(models.Model):
 
     def __str__(self):
         return f"{self.modelo}, {self.marca}, {self.ano}, {self.cor}, ({self.id})"
+
+    class Meta:
+        verbose_name = 'Veículo'
