@@ -9,6 +9,15 @@ class Marca(models.Model):
         return self.nome.upper()
 
 
+class Modelo(models.Model):
+    descricao = models.CharField(max_length=70)
+    marca = models.ForeignKey(
+        Marca, on_delete=models.PROTECT, related_name="modelo")
+
+    def __str__(self):
+        return f"{self.descricao} | {self.marca}"
+
+
 class Categoria(models.Model):
     descricao = models.CharField(max_length=100)
 
@@ -43,8 +52,9 @@ class Veiculo(models.Model):
     categoria = models.ForeignKey(
         Categoria, on_delete=models.PROTECT, related_name="veiculos"
     )
-    modelo = models.CharField(max_length=50)
-
+    modelo = models.ForeignKey(
+        Modelo, on_delete=models.PROTECT, related_name="veiculos"
+    )
     cor = models.ForeignKey(
         Cor, on_delete=models.PROTECT, related_name="veiculos"
     )
@@ -56,6 +66,5 @@ class Veiculo(models.Model):
 
     def __str__(self):
         return f"{self.modelo}, {self.marca}, {self.ano}, {self.cor}, ({self.id})"
-
     class Meta:
-        verbose_name = 'Veículo'
+        verbose_name = "Veículo"
