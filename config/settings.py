@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "corsheaders",
     'rest_framework',
     "rest_framework_simplejwt",
+    "usuario",
     'garagem',
 ]
 
@@ -140,3 +141,5 @@ REST_FRAMEWORK = {
     #     "rest_framework.permissions.DjangoModelPermissions",
     # ],
 }
+
+AUTH_USER_MODEL = "usuario.Usuario"
