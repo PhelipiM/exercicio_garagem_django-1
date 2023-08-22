@@ -1,6 +1,4 @@
 from rest_framework.serializers import ModelSerializer
-
-
 from garagem.models import Veiculo
 
 class VeiculoSerializer(ModelSerializer):
@@ -17,4 +15,4 @@ class VeiculoDetailSerializer(ModelSerializer):
 class VeiculoListSerializer(ModelSerializer):
     class Meta:
         model = Veiculo
-        fields = ["id", "ano", "cor", "preco"]
+        fields = ["id", "ano", "cor", "preco", "name", "image", "description"]

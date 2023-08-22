@@ -4,6 +4,9 @@ from garagem.models import Marca, Categoria, Modelo, Cor, Acessorio
 
 
 class Veiculo(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    image = models.CharField(max_length=255)
     marca = models.ForeignKey(
         Marca, on_delete=models.PROTECT, related_name="veiculos"
     )
