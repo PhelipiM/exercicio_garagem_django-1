@@ -5,8 +5,11 @@ from garagem.models import Marca, Categoria, Modelo, Cor, Acessorio
 
 class Veiculo(models.Model):
     name = models.CharField(max_length=255)
+
     description = models.CharField(max_length=255)
+
     image = models.CharField(max_length=255)
+    
     marca = models.ForeignKey(
         Marca, on_delete=models.PROTECT, related_name="veiculos"
     )
@@ -23,7 +26,7 @@ class Veiculo(models.Model):
     ano = models.IntegerField(default=0, null=True, blank=True,)
 
     preco = models.DecimalField(
-        max_digits=7, decimal_places=2, default=0, null=True, blank=True)
+        max_digits=12, decimal_places=2, default=0, null=True, blank=True)
     
     acessorio = models.ManyToManyField(Acessorio, related_name="Acessórios")
 
