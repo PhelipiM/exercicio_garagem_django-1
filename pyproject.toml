@@ -13,7 +13,7 @@ authors = [
     {name = "Nunes-Will", email = "nuneswillroberto@gmail.com"},
 ]
 dependencies = [
-    "django>=4.1.7",
+    "django>=4.2.5",
     "djangorestframework>=3.14.0",
     "django-cors-headers>=4.2.0",
     "djangorestframework-simplejwt>=5.2.2",
